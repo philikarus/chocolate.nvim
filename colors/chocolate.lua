@@ -638,6 +638,21 @@ for name, attrs in pairs({
 	["@markup.strikethrough"] = { strikethrough = true },
 	["@markup.quote"] = { bg = colors.black2 },
 
+	["@markup.heading.1.markdown"] = { fg = colors.red },
+	["@markup.heading.2.markdown"] = { fg = colors.orange },
+	["@markup.heading.3.markdown"] = { fg = colors.yellow },
+	["@markup.heading.4.markdown"] = { fg = colors.green },
+	["@markup.heading.5.markdown"] = { fg = colors.blue },
+	["@markup.heading.6.markdown"] = { fg = colors.purple },
+
+	--render-markdown
+	RenderMarkdownH1Bg = { bg = colors.one_bg3 },
+	RenderMarkdownH2Bg = { bg = colors.one_bg3 },
+	RenderMarkdownH3Bg = { bg = colors.one_bg3 },
+	RenderMarkdownH4Bg = { bg = colors.one_bg3 },
+	RenderMarkdownH5Bg = { bg = colors.one_bg3 },
+	RenderMarkdownH6Bg = { bg = colors.one_bg3 },
+
 	["@comment"] = { fg = colors.grey_fg },
 	["@comment.todo"] = { fg = colors.grey, bg = colors.white },
 	["@comment.warning"] = { fg = colors.black2, bg = theme.base09 },
