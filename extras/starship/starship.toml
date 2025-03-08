@@ -1,0 +1,103 @@
+# Get editor coRpletions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+#format = "$all$fill$time$line_break$character"
+format = """
+$os\
+$username\
+$sudo\
+$hostname\
+$all\
+$status\
+$fill\
+$env_var\
+$time\
+$custom\
+$line_break\
+$character
+"""
+
+palette = "chocolate"
+
+scan_timeout = 30
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Replace the '❯' symbol in the prompt with '➜'
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+error_symbol = '[➜](bold red)'
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+symbol = "󰏗 "
+
+[os]
+disabled = false
+
+[os.symbols]
+Macos = " "
+
+[username]
+format = "[$user]($style) "
+
+[sudo]
+disabled = false
+
+[hostname]
+format = "on [$hostname]($style) in "
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style) "
+style = "bold blue"
+truncate_to_repo = false
+truncation_length = 5
+read_only = " 󰌾"
+
+[git_status]
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+modified = '!${count}'
+staged = '+${count}'
+renamed = '»${count}'
+deleted = '✘${count}'
+untracked = '?${count}'
+
+[env_var.http_proxy]
+symbol = "🌍"
+format = "[${symbol}]($style) "
+style = "bold blue"
+
+[fill]
+symbol = " "
+
+[time]
+disabled = false
+format = "[$time]($style) "
+
+[status]
+symbol = '✘'
+pipestatus_format = '\[$pipestatus\]  [$symbol$common_meaning$signal_name$maybe_int]($style) '
+format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style) '
+disabled = false
+pipestatus = true
+pipestatus_separator = '|'
+map_symbol = true
+
+[conda]
+ignore_base = false
+#symbol = " "
+style = "bold cyan"
+
+
+[palettes.chocolate]
+black = "#252221"
+red = "#c65f5f"
+green = "#8ca589"
+yellow = "#d9b27c"
+blue = "#7d92a2"
+purple = "#c65f5f"
+cyan = "#998396"
+white = "#c8bAA4"
